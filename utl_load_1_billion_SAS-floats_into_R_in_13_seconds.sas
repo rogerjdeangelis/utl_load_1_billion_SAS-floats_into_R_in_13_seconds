@@ -1,8 +1,6 @@
 Loading 1 billion 8 byte SAS floats into R in 13 seconds. Sum product of 1 billon x 1 billion floats in 12 seconds     
                                                                                                                        
-   These timiings are on a 2008 Dell $600 T7400 workstation with slow DDR2 ram.                                        
-   Have been watching the off lease market on ebay to update my workstation.                                           
-   Expect the AMD Ryzen to depress workstation prices. $300 Ryzen outperforms $1000 Intel chips.                       
+   Note: You can reshape the the back to back floats into a matrix in R;                
                                                                                                                        
    WORKING CODE                                                                                                        
                                                                                                                        
@@ -64,7 +62,9 @@ read.from <- file("d:/bin/binmat.bin", "rb");
 vector.doubles <- readBin(read.from, n=1000000000, "double");                                                          
 close(read.from);                                                                                                      
 format(sum(vector.doubles/vector.doubles),scientific=FALSE);                                                           
-');                                                                                                                    
+');    
+
+[1] "1000000000"
                                                                                                                        
 NOTE: 5 lines were written to file PRINT.                                                                              
 NOTE: 4 records were read from the infile RUT.                                                                         
